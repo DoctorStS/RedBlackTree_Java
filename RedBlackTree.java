@@ -111,4 +111,19 @@ public class RedBlackTree {
         }while(needBalance);
         return cur;
     }
+
+    public void print(){
+        print(root, 0);
+    }
+
+    private void print(Node node, int depth){
+        if(node == null){
+            return;
+        }
+        print(node.left, depth+4);
+        for (int i = 0; i < depth; i++) 
+            System.out.print(" ");
+        System.out.println("Value: "+node.value+" {color: "+node.color+"}");
+        print(node.right, depth+4);
+    }
 }
